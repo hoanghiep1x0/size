@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function tinh_size(gioi_tinh, _height, _width) {
+
+            if (gioi_tinh == "NAM") {
+
+                if (_height < 168) {
+
+                    if (_width < 53) {
+                        return "SIZE S";
+                    } else if (_width >= 53 && _width <= 62) {
+                        return "M";
+                    } else if (_width >= 64) {
+                        return "L";
+                    } else {
+                        return "SIZE M";
+                    }
+                }
+
+                if (_height >= 168 && _height <= 174) {
+
+                    if (_width < 53) {
+                        return "SIZE M";
+                    } else if (_width >= 53 && _width <= 60) {
+                        return "SIZE L";
+                    } else if (_width >= 70) {
+                        return "XL";
+                    } else {
+                        return "SIZE L OR XL";
+                    }
+                }
+
+
+                if (_height >= 174 && _height <= 180) {
+
+                    if (_width < 53) {
+                        return "SIZE M";
+                    } else if (_width >= 53 && _width <= 60) {
+                        return "SIZE L hoặc XL";
+                    } else if (_width >= 75) {
+                        return "2XL";
+                    } else {
+                        return "SIZE XL";
+                    }
+                }
+
+                if (_height >= 180) {
+
+                    if (_width < 53) {
+                        return "SIZE L";
+                    } else if (_width >= 53 && _width <= 60) {
+                        return "SIZE XL";
+                    } else if (_width >= 75) {
+                        return "2XL";
+                    } else {
+                        return "SIZE 2XL";
+                    }
+                }
+
+            } else {
+
+
+                if (_height < 150) {
+
+                    if (_width < 40) {
+                        return "SIZE S";
+                    } else if (_width >= 40 && _width < 50) {
+                        return "SIZE S hoặc M";
+                    }
+                    else if (_width >= 50 && _width <= 60) {
+                        return "SIZE M";
+                    } else {
+                        return "SIZE L";
+                    }
+                }
+
+                if (_height >= 150 && _height <= 160) {
+
+                    if (_width < 40) {
+                        return "SIZE M";
+                    } else if (_width >= 40 && _width <= 50) {
+                        return "SIZE M hoặc L";
+                    }
+                    else if (_width >= 50 && _width <= 60) {
+                        return "SIZE L";
+                    } else {
+                        return "SIZE L or XL";
+                    }
+                }
+
+
+                if (_height > 160 && _height <= 170) {
+
+                    if (_width < 53) {
+                        return "SIZE M";
+                    } else if (_width >= 40 && _width <= 50) {
+                        return "SIZE L hoặc XL";
+                    } else if (_width >= 53 && _width <= 60) {
+                        return "SIZE L hoặc XL";
+                    } else {
+                        return "SIZE XL";
+                    }
+                }
+
+                if (_height >= 170) {
+
+                    if (_width < 53) {
+                        return "SIZE L";
+                    } else if (_width >= 40 && _width <= 50) {
+                        return "SIZE XL";
+                    } else if (_width > 53 && _width < 60) {
+                        return "SIZE XL";
+                    } else {
+                        return "SIZE XXL";
+                    }
+                }
+
+
+            }
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+    <div>
+
+
+        <h3> Giới tính :
+
+            <select id="sex">
+                <option value="NAM" selected>
+                    Nam
+                </option>
+                <option value="Nữ">
+                    Nữ
+                </option>
+            </select>
+
+        </h3>
+
+
+
+        <h3>Nhập chiều cao </h3>
+        <input type="number" id="height" value="160" placeholder="Nhập chiều cao 1m = 100" />
+        <h3>Nhập cân nặng </h3>
+        <input type="number" id="width" value="53" placeholder="Nhập cân nặng 1kg = 1" />
+        <p></p>
+
+        <button type="submit" id="submit" value="Tính Size Chuẩn">Xem Size</button>
+        <p></p>
+
+    </div>
+
+    <div>
+
+        Kết quả : <span id="result"></span>
+
+    </div>
+
+    <script>
+
+
+
+
+        var submit = document.getElementById("submit");
+
+        submit.onclick = function () {
+            var sex = document.getElementById("sex").value;
+            var heigt = document.getElementById("height").value;
+            var wight = document.getElementById("width").value;
+            var _result = tinh_size(sex, heigt, wight);
+            document.getElementById("result").innerText = _result;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
