@@ -27,7 +27,7 @@
 
                     if (_width < 53) {
                         return "SIZE M";
-                    } else if (_width >= 53 && _width <= 60) {
+                    } else if (_width >= 53 && _width <= 62) {
                         return "SIZE L";
                     } else if (_width >= 70) {
                         return "SIZE XL";
@@ -41,7 +41,7 @@
 
                     if (_width < 53) {
                         return "SIZE M";
-                    } else if (_width >= 53 && _width <= 60) {
+                    } else if (_width >= 53 && _width <= 62) {
                         return "SIZE L hoặc XL";
                     } else if (_width >= 75) {
                         return "2XL";
@@ -54,7 +54,7 @@
 
                     if (_width < 53) {
                         return "SIZE L";
-                    } else if (_width >= 53 && _width <= 60) {
+                    } else if (_width >= 53 && _width <= 62) {
                         return "SIZE XL";
                     } else if (_width >= 75) {
                         return "2XL";
@@ -70,10 +70,10 @@
 
                     if (_width < 40) {
                         return "SIZE S";
-                    } else if (_width >= 40 && _width < 50) {
+                    } else if (_width >= 40 && _width <= 50) {
                         return "SIZE S hoặc M";
                     }
-                    else if (_width >= 50 && _width <= 60) {
+                    else if (_width > 50 && _width <= 60) {
                         return "SIZE M";
                     } else {
                         return "SIZE L";
@@ -87,7 +87,7 @@
                     } else if (_width >= 40 && _width <= 50) {
                         return "SIZE M hoặc L";
                     }
-                    else if (_width >= 50 && _width <= 60) {
+                    else if (_width >= 50 && _width <= 61) {
                         return "SIZE L";
                     } else {
                         return "SIZE L or XL";
